@@ -1,0 +1,97 @@
+Write a PHP script for the following: Design a form to accept two numbers from the user. 
+Give options to choose the arithmetic operation (use radio buttons). Display the result on the next 
+form. (Use the concept of function and default parameters. Use ‘include’ construct or require 
+statement)
+//////////////////////////////////////////////////////////////////////////////////
+html-:
+
+<html> 
+<body> 
+<form name="f1" action="12(2).php" method="POST"> 
+Enter the 1st number<input type="text" name="n1"> <br>
+Enter 2nd number<input type="text" name="n2"> <br>
+Addition<input type=radio name=radio value="a"> <br>
+Subtraction<input type=radio name=radio value="s"> <br>
+Multiplication<input type=radio name=radio value="m"> <br>
+Division<input type="radio" name="radio" value="d"> <br>
+<input type="submit" value="Answer"> 
+</form> 
+</body> 
+</html> 
+//////////////////////////////////////////////////////////////////////////
+1st PHP-:
+
+<?php 
+function add($n1,$n2=10) 
+{ 
+ return($n1+$n2); 
+} 
+function sub($n2,$n1=3) 
+{ 
+ return($n1-$n2); 
+} 
+function mul($n1,$n2=5) 
+{ 
+ return($n1*$n2); 
+} 
+function div($n1,$n2=3) 
+{ 
+ return($n1/$n2); 
+} 
+?> 
+////////////////////////////////////////////////////////////////////////////
+
+2nd php-:
+
+<?php 
+include("12(1).php"); 
+$n1=$_POST['n1']; 
+$n2=$_POST['n2']; 
+$opt=$_POST['radio']; 
+if($opt=='a') 
+{ 
+ 
+ if($n1 && $n2) 
+ echo"Answer".add($n1,$n2); 
+ elseif($n1) 
+ echo"Answer".add($n1); 
+ elseif($n2) 
+ echo"answer".add($n2); 
+ 
+} 
+if($opt=='s') 
+{ 
+ if($n1 && $n2) 
+ echo"Answer".sub($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".sub($n1); 
+ elseif($n2) 
+ echo"answer".sub($n2); 
+} 
+if($opt=='m') 
+{ 
+ if($n1 && $n2) 
+ echo"Answer".mul($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".mul($n1); 
+ elseif($n2) 
+ echo"answer".mul($n2); 
+} 
+if($opt=='d') 
+{ 
+ if($n2==0) 
+ echo"Division by zero is not possible"; 
+ else 
+ { 
+ if($n1 && $n2) 
+ echo"Answer".div($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".div($n1); 
+ elseif($n2) 
+ echo"answer".div($n2); 
+ } 
+} 
+?> 
