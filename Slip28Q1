@@ -1,0 +1,23 @@
+Write a program to read a flat file “student.dat”, calculate the percentage and display the 
+data from file in tabular format.(Student.dat file contains rollno, name, OS, WT, DS, Python,
+Java, CN ) 
+/////////////////////////////////////////////////////////////////////////////////
+
+<?php
+	$fp=fopen("student.dat","r");
+	echo "<h2>STUDENT INFORMATION</h2><br>";
+	echo "<table border=1>";
+	echo "<tr>";
+	echo "<td><b>Rollno</b></td><td><b>Name</b></td><td><b>OS</b></td><td><b>WT</b></td><td><b>DS</b></td><td><b>TCS</b></td><td><b>PYTHON</b></td><td><b>JAVA</b></td><td><b>Total</b></td><td><b>Percentage</b></td>";
+	echo "</tr>";
+	while($data=fscanf($fp,"%d\t%s\t%d\t%d\t%d\t%d\t%d\t%d\n"))
+	{
+		list($rno,$name,$m1,$m2,$m3,$m4,$m5,$m6)=$data;
+		$total=($m1+$m2+$m3+$m4+$m5+$m6);
+		$per=$total/6;
+		echo "<tr>";
+		echo "<td>$rno</td><td>$name</td><td>$m1</td><td>$m2</td><td>$m3</td><td>$m4</td><td>$m5</td><td>$m6</td><td>$total</td><td>$per</td>";
+		echo "</tr>";
+	}
+	echo "</table>";
+?>
