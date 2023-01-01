@@ -1,0 +1,35 @@
+Write a PHP program to read two file names from user and copy the content of first file into 
+second file.
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+HTML-:
+
+
+<html lang="en"> 
+<head> 
+
+</head> 
+<body> 
+ <form action="27.php" method="get"> 
+ Enter File name to read <input type="text" name="fname1"> 
+ Enter File name to write <input type="text" name="fname2"> 
+ <input type="submit" value="Copy"> 
+ </form> 
+</body> 
+</html> 
+
+////////////////////////////////////////////////////////////////
+
+PHP-:
+
+<?php 
+$fname1=$_GET['fname1']; 
+$fname2=$_GET['fname2']; 
+$fp1=fopen($fname1,"r"); 
+$fp2=fopen($fname2,"w"); 
+$size=filesize($fname1); 
+$str=fread($fp1,$size); 
+fwrite($fp2,$str,$size); 
+echo "Append Successfull"; 
+?> 
