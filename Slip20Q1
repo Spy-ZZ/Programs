@@ -1,0 +1,114 @@
+ Write a menu driven program to perform the following operations on associative arrays: 
+a) Split an array into chunks 
+b) Sort the array by values without changing the keys. 
+c) Filter the even elements from an array.
+/////////////////////////////////////////////////////////
+
+HTML-:
+
+<html>
+<head>
+	<title> Assignment 4 - Q2 </title>
+</head>
+<body bgcolor = "pink" >
+	<form method="POST" action="SetC_q2.php">
+	Enter the element <input type="text" name="name"><br><br>
+	<input type="radio" name="op" value=1>Split an array into chunk<br>
+	<input type="radio" name="op" value=2>Sort array by value without changing the key<br>
+	<input type="radio" name="op" value=3>Filter the odd element from array<br>
+	<input type="radio" name="op" value=4>Merge the given array<br>
+	<input type="radio" name="op" value=5>Find intersection of two array<br>
+	<input type="radio" name="op" value=6>Find union of two array<br>
+	<input type="radio" name="op" value=7>Find differnce of two array<br>
+	<input type="radio" name="op" value=8>Insert new item in array at any position<br>
+	<input type="radio" name="op" value=9>Search<br><br>
+	<input type="submit" value="OK">
+	<input type="reset" value="CLEAR">
+	</form>
+</body>
+</html>
+
+///////////////////////////////////////////////////////////////////////////////
+
+PHP-:
+
+<?php
+$a=$_POST['op'];
+$b=array("1"=>"101","2"=>"102","3"=>"103","4"=>"104","5"=>"105");
+$b2=array("6"=>"TYBCS","7"=>"103","8"=>"101");
+$a1=$_POST['name'];
+switch($a)
+{
+case 1:
+       print_r($b);
+       echo"<br>";
+       echo"after a spliting array:";
+       print_r(array_chunk($b,2,true));
+       break;       
+case 2: 
+      print_r($b);
+      echo"<br>";
+      echo"after a sorting array:";
+      asort($b);
+      print_r($b);
+      break;
+case 3:
+      print_r($b);
+      echo"<br>";
+      echo" After Filter the array:";
+     array_filter($b,1);
+     print_r($b);
+     break;
+case 4:
+      print_r($b);
+      echo"<br>";
+     $c=array_merge($b,$b2);
+      print_r($c);
+      break;
+case 5:
+       print_r($b);
+      echo"<br>";
+      $c=array_intersect($b,$b2);
+      print_r($c);
+      break;
+case 6:
+      function array_union($b,$b2)
+      {
+       $union=array_merge(array_intersect($b,$b2),array_diff($b,$b2),array_diff($b2,$b));
+      
+       return $union; 
+     }
+      print_r(array_union($b,$b2));      
+      
+      break;
+case 7:
+        print_r($b);
+      echo"<br>";
+      $c=array_diff($b,$b2);
+  print_r($c);
+      break;
+case 8:
+       foreach($b as $x)
+       {
+	echo"$x";
+  	}
+       $inserted=99;
+       array_splice($b,3,0,$inserted);
+      foreach($b as $x)
+       {
+	echo"$x";
+  	}
+case 9:
+       function Search($a1,$b)
+       {
+        return(array_search($a1,$b));
+       }
+       $value=104;
+       print_r(Search($a1,$b));
+       break;
+}
+?>
+
+
+
+
