@@ -1,0 +1,76 @@
+Write a menu driven program to perform the following stack related operations:
+a) Insert an element in stack 
+b) Delete an element from stack 
+c) Display the contents of stack
+/////////////////////////////////////////////////////////////////////////
+
+HTML-:
+
+<html>
+<head>
+	<title> Assignment 4 - Q2 </title>
+<head>
+<body bgcolor = "pink">
+	<form method="POST" action="SetA_q2.php">
+	Enter the element <input type="text" name="name"><br><br>
+	<input type='radio' name='op' value='1'>Insert in stack.<br>
+	<input type='radio' name='op' value='2'>Delete from stack.<br>
+	<input type='radio' name='op' value='3'>Display stack.<br>
+	<input type='radio' name='op' value='4'>Insert in queue.<br>
+	<input type='radio' name='op' value='5'>Delete from queue.<br>
+	<input type='radio' name='op' value='6'>Display queue.<br><br>
+	<input type='submit'  value='OK'>
+	<input type='reset'  value='CLEAR'>
+	</form>
+</body>
+</html>
+
+/////////////////////////////////////////////////////////////
+
+PHP-:
+
+<?php
+    $a = $_POST['op'];
+    $b = array(1,2,3,4,5,6,7,8,9);
+    $c = $_POST['name'];
+    
+    switch($a)
+    {
+        case 1:
+				echo "\nArray :\n";
+                print_r($b);
+                array_push($b,$c);
+                echo"\nAfter insert an element in stack:<br>";
+                print_r($b);
+                break;
+        case 2:
+				echo "\nArray :\n";
+                print_r($b);
+                array_pop($b);
+                echo"\nAfter delete an element in stack:<br>";
+                print_r($b);
+                break;
+        case 3:
+                echo"Contents of stack:<br>";
+                print_r($b);
+                break;
+        case 4:
+				echo "\nArray :\n";
+                print_r($b);
+                array_unshift($b,$c);
+                echo"\nAfter insert an element in queue:<br>";
+                print_r($b);
+                break;
+        case 5: 
+				echo "\nArray :\n";
+				print_r($b);
+                array_shift($b);
+                echo"\nAfter delete an element in queue:<br>";
+                print_r($b);
+                break;
+        case 6:
+                echo"Contents of queue:<br>";
+                print_r($b);
+                break;
+    }
+?>
