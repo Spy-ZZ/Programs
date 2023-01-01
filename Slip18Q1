@@ -1,0 +1,59 @@
+Write a menu driven program to perform the following operations on an associative array
+a. Reverse the order of each element’s key-value pair.
+b. Traverse the element in an array in random order.
+c. Convert the array elements into individual variables.
+d. Display the elements of an array along with key.
+//////////////////////////////////////////////////////////////
+
+HTML-:
+
+
+<html> 
+<body> 
+<form action="seta1.php" method="POST"> 
+1.Reverse the order of each element’s key-value pair 
+<input type="radio" name="opt1" value="o1"><br> 
+2.traverse the element in the random order 
+<input type="radio" name="opt1" value="o2"><br> 
+3. Convert the array elements into individual variables. 
+<input type="radio" name="opt1" value="o3"><br> 
+4.Display the elements of an array along with key. 
+<input type="radio" name="opt1" value="o4"><br> 
+<input type="submit" value="ok"> 
+</form> 
+</body> 
+</html> 
+
+/////////////////////////////////////////////////////////////////////
+
+PHP-:
+
+<?php 
+ $a=array('one'=>'aa','two'=>'bb','three'=>'cc','four'=>'dd','five'=>'ee'); 
+ $opt=$_POST['opt1']; 
+ if($opt=='o1') 
+{ 
+echo "origonal array is<br>"; 
+print_r($a); 
+ echo"the flip elements of array<br>"; 
+ $fp=array_flip($a); 
+ print_r($fp); 
+} 
+else if($opt=='o2') 
+{ 
+ echo"random order elements are"; 
+ shuffle($a); 
+ print_r($a); 
+} 
+else if($opt=='o3') 
+{ 
+ extract($a); 
+echo "after converting array into variables<br>"; 
+echo $one." ".$two." ".$three." ".$four." ".$five; 
+} 
+else if($opt=='o4') 
+{ 
+ echo"the elemnt of array with therer keys"; 
+ print_r($a); 
+} 
+?> 
