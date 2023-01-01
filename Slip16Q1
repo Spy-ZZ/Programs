@@ -1,0 +1,51 @@
+Write a PHP script for the following: Design a form to accept the marks of 5 different 
+subjects of a student, having serial number, subject name & marks out of 100. Display the 
+result in the tabular format which will have total, percentage and grade. Use only 3 text 
+boxes.(Use array of form parameters)
+
+/////////////////////////////////////////////////////////
+
+HTML-:
+
+<html> 
+<head> 
+<title> marksheet </title> 
+</head> 
+<body> 
+<form name = "string" action = "16.php" method = "get"> 
+student id <input type = "text" name = "v1"/></br></br> 
+Subject name<input type = "text" name = "v2"/></br></br> 
+subject marks<input type = "text" name = "v3"/></br></br> 
+<button type = "submit"> display marklist </button> 
+</form> 
+</body> 
+</html>
+
+////////////////////////////////////////////////////////////
+
+PHP-:
+
+<?php 
+$a =$_GET['v1']; 
+$b =$_GET['v2']; 
+$c =$_GET['v3']; 
+$sum=0; 
+echo "<h1> <center>Marksheet</center></h1>"; 
+echo "<h3><center>student id:$a</h3><br>"; 
+$d =explode(",",$b); 
+$e =explode(",",$c); 
+echo "<center><table border=2 width=50%>"; 
+ for($i=0;$i<=4;$i++) 
+{ 
+ 
+ echo "<tr> 
+ <td>$d[$i]</td> 
+ <td>$e[$i]</td> 
+ </tr>"; 
+ $sum=$e[$i]+$sum; 
+} 
+$result=$sum/5; 
+echo "<tr><td>Total marks </td><td>$sum</td>"; 
+echo"<tr><td>Percentage</td><td>$result</td></tr>"; 
+echo "</center>" 
+?>
