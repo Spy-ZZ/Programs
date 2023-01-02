@@ -1,0 +1,12 @@
+# Q.2) Write a Python program [15]
+# 1. To create a dataframe containing columns name, age and percentage. Add 10 rows to the 
+# dataframe. View the dataframe. 
+# 2. To print the shape, number of rows-columns, data types, feature names and the description of 
+# the data 
+# 3. To Add 5 rows with duplicate values and missing values. Add a column ‘remarks’ with empty 
+# values. Display the data.
+# 
+
+# In[ ]:
+
+
