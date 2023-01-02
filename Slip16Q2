@@ -25,5 +25,21 @@ plt.show()
 # graduation percentage and age. Display average age of students, average of graduation 
 # percentage. [5]
 
-# In[ ]:
+
+import pandas as pd
+df=pd.DataFrame(columns=['Name','Age','GraduationPercentage'])
+df.loc[0]=['Yash',18,80]
+df.loc[1]=['Yogya',19,85]
+df.loc[2]=['Subhyaa',19,80]
+df.loc[3]=['XYZ',25,60]
+df.loc[4]=['ABC',15,40]
+df.loc[5]=['PQR',12,75]
+df.loc[6]=['LMN',9,90]
+df.loc[7]=['ABC',20,65]
+df.loc[8]=['XYZ',19,80]
+df.loc[9]=['PQR',12,75]
+A=df.groupby('Name', as_index=False).Age.mean()
+print("A:\n",A)
+GP=df.groupby('Name', as_index=False).GraduationPercentage.mean()
+print("GP:\n",GP)
 
