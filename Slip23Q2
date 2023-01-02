@@ -1,0 +1,32 @@
+# # Slip 23
+
+# Q.2) Dataset Name: winequality-red.csv [15]
+# Write a program in python to perform following task 
+# a. Rescaling: Normalised the dataset using MinMaxScaler class 
+# b. Standardizing Data (transform them into a standard Gaussian distribution with a mean of 
+# 0 and a standard deviation of 1)
+# c. Binarizing Data using we use the Binarizer class (Using a binary threshold, it is possible 
+# to transform our data by marking the values above it 1 and those equal to or below it, 0)
+
+# In[174]:
+
+
+import pandas as pd
+import numpy as np
+from sklearn import preprocessing
+import scipy.stats as p
+import scipy.stats as s
+df=pd.read_csv("Downloads\winequality-red.csv")
+print("Min Maxscale Data:\n")
+ds=preprocessing.MinMaxScaler(feature_range=(0,1))
+ds1=ds.fit_transform(df)
+print(ds1.round(2))
+print("--------------------------------------------")
+print("Standardized Data:\n")
+print("initial mean:",s.tmean(df).round(2))
+print("initial sd:",round(df.std(),2))
+print("--------------------------------------------")
+print("Binarized Data")
+db=preprocessing.Binarizer(threshold=5).transform(df)
+print(db)
+
