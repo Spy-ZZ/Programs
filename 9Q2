@@ -1,0 +1,64 @@
+# # Slip 9
+
+# Q.2 A) Generate a random array of 50 integers and display them using a line chart, scatter plot. 
+# Apply appropriate color, labels and styling options. [5]
+
+
+
+
+import numpy as np 
+import matplotlib.pyplot as plt 
+x = np.random.randint(1,100,50) 
+y = np.random.randint(1,100,50)
+print("Line Chart:\n")
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.plot(x,y)
+plt.show()
+print("-----------------------------------------------------------------------")
+print("Scatter Plot:\n")
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.scatter(x,y,size,colors)
+plt.show()
+
+
+# B) Create two lists, one representing subject names and the other representing marks 
+# obtained in those subjects. Display the data in a pie chart. [5]
+
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+subjects=['Marathi','English','Maths','Sanskirt']
+marks=[90,91,92,93]
+plt.pie(marks,labels=subjects)
+plt.show()
+
+
+# C) Write a program in python to perform following task (Use winequality-red.csv ) 
+# Import Dataset and do the followings: 
+# a) Describing the dataset 
+# b) Shape of the dataset 
+# c) Display first 3 rows from dataset    [5]
+
+
+
+import pandas as pd
+df=pd.read_csv("Downloads\winequality-red.csv")
+print("\n")
+print("-------------------------------------")
+print("Describe :")
+print("\n")
+print(df.describe())
+print("\n")
+print("-------------------------------------")
+print("Shape :")
+print("\n")
+print(df.shape)
+print("\n")
+print("-------------------------------------")
+print("First 3 rows:")
+print("\n")
+print(df.iloc[:3])
