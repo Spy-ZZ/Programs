@@ -8,73 +8,84 @@ d. Find the factorial of second number.
 
 HTML-:
 
-<head>
-      EX3-SETB2
-      </head>
-      <body>
-      <form method="get" action="b2.php">
-      enter the string <input type="text" name="s1">
-      select the seperator <select name="sel1">
-      <option value="#">#</option><br>
-      <option value="$">$</option><br>
-      <option value="%">%</option><br>
-      <option value="@">@</option><br>
-      <option value="!">!</option><br>
-      <option value=",">,</option><br>
-      </select><br>
-      enter the seperator to be replaced :<select name="sel2">
-      <option value="#">#</option><br>
-      <option value="$">$</option><br>
-      <option value="%">%</option><br>
-      <option value="@">@</option><br>
-      <option value="!">!</option><br>
-      <option value=",">,</option><br>
-      </select>
-      <br>
-      <input type="submit" value="submit">
-      <input type="reset" value="reset">
-      </form>
-      </body>
-     </html>
-     
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <form action="10.php" value="GET">
+      Enter Two Numbers<br />
+      <input type="text" name="n1" /><br /><br />
+      <input type="text" name="n2" /><br /><br />
+      Select An Operation<br />
+      <input type="radio" name="op" value="mod" />Mod Of The Two Numbers<br /><br />
+      <input type="radio" name="op" value="power" />Power Of The First Number
+      Raised To The Second<br /><br />
+      <input type="radio" name="op" value="sum" />The Sum Of First n Numbers<br /><br />
+      <input type="radio" name="op" value="fact" />Factorial Of The Second
+      Number<br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+
      ////////////////////////////////////////////////////////////////////////////
      PHP-:
      
-     <?php
-$s1=$_GET['s1'];
-$sel1=$_GET['sel1'];
-$sel2=$_GET['sel2'];
-echo"String is :".$s1."<br>";
-echo"Seprator is : $sel1 <br>";
-$a=explode("$sel1",$s1);
-echo"The splitted string is :<br>";
-foreach($a as $p)
-{
- echo"$p<br>";
-}
-echo"The string replaced with selected seperator is :<br>";
-$ans=str_replace($sel1,$sel2,$s1);
-echo "<br>$ans";
-echo"<br><br>";
-$str1="dear student today is the php practical";
-function lastword($str1)
-{
- 
- $pos=strrpos($str1,' ');
+    <?php 
+ $n1=$_GET["n1"]; 
+ $n2=$_GET["n2"]; 
+ $op=$_GET["op"]; 
+ function mod($n1,$n2) 
+ { 
+ $n3=0; 
+ if($n2!=0) 
+ $n3=$n1%$n2; 
+ return $n3; 
+ } 
+ function power($n1,$n2) 
+ { 
+ $n3=1; 
+ for($i=1;$i<=$n2;$i++) 
+ $n3=$i*$n1; 
+ return $n3; 
+ } 
+ function sum($n1) 
+ { 
+ $n3=0; 
+ for($i=1;$i<=$n1;$i++) 
+ { 
+ $n3=$n3+$i; 
+ } 
+ return $n3; 
+ } 
+ function fact($n2) 
+ { 
+ $n3=1; 
+ for($i=1;$i<=$n2;$i++) 
+ { 
+ $n3=$n3*$i; 
 
- if(!pos)
- {
-  $pos=0;
- }
- else
- {
-  $pos=$pos+1;
- }
- 
- $lword=substr($str1,$pos);
- return $lword;
-}
-echo"last word of a given string is :";
-echo"lastword"($str1);
+ } 
+ return $n3; 
+ } 
+ switch($op) 
+ { 
+ case "mod": $result=mod($n1,$n2); 
+             echo "Mod of $n1 and $n2 is $result."; 
+             break;
+
+ case "power":$result=power($n1,$n2); 
+              echo "$n1 raised to $n2 is $result."; 
+              break; 
+
+ case "sum": $result=sum($n1); 
+             echo "Sum of first $n1 number is $result."; 
+             break; 
+
+ case "fact":$result=fact($n2); 
+             echo"Factorial of $n2 is $result."; 
+             break; 
+ } 
 ?>
      
