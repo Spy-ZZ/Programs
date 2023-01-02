@@ -42,4 +42,19 @@ plt.show()
 
 # In[ ]:
 
-
+import pandas as pd
+df=pd.DataFrame(columns=['Name','Salary','Department'])
+df.loc[0]=['aa',1000,'CS']
+df.loc[1]=['bb',2000,'IT']
+df.loc[2]=['cc',3000,'CS']
+df.loc[3]=['dd',4000,None]
+df.loc[5]=['ee',4000,'CS']
+df.loc[6]=[None,6000,'IT']
+df.loc[7]=['gg',7000,'CS']
+df.loc[8]=['hh',8000,None]
+df.loc[9]=['ii',1000,'CS']
+df.loc[10]=['aa',2000,'IT']
+df["remarks"]=None
+df.drop(columns='remarks',axis=1,inplace=True)
+df.fillna(" ",axis=1,inplace=True)
+df
