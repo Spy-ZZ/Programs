@@ -7,6 +7,46 @@
 # values. Display the data.
 # 
 
-# In[ ]:
+import pandas as pd
+df=pd.DataFrame(columns=['Name','Age','Percentage'])
+df.loc[0]=['Yash',18,80]
+df.loc[1]=['ABC',19,85]
+df.loc[2]=['Shubham',19,80]
+df.loc[3]=['XYZ',25,60]
+df.loc[4]=['Prasad',15,80]
+df.loc[5]=['PQR',12,40]
+df.loc[6]=['Chetan',9,80]
+df.loc[7]=['ABC',19,85]
+df.loc[8]=['Omkar',19,80]
+df.loc[9]=['PQR',12,40]
+print("Dataframe:\n")
+print(df)
+print("--------------------------------------------------------")
+print("Shape:\n",df.shape)
+print("--------------------------------------------------------")
+print("Describe:\n",df.describe())
+print("--------------------------------------------------------")
+print("Data Types:\n",df.dtypes)
+print("--------------------------------------------------------")
+print("INFO:\n",df.info())
+print("--------------------------------------------------------")
+df.loc[10]=['Yash',18,None]
+df.loc[11]=['ABC',None,85]
+df.loc[12]=['Omkar',19,80]
+df.loc[13]=[None,25,60]
+df.loc[14]=['ABC',None,40]
+df["Remark"]=None
+df.duplicated()
+print("Data:\n",df)
+print(df.shape)
+print(df.describe())
+print(df.dtypes)
+print(df.info())
+
+
+
+
+
+
 
 
