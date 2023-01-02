@@ -1,0 +1,13 @@
+# B) Write a Python program to generate a line plot of name Vs salary [5]
+
+
+import pandas as pd 
+df=pd.DataFrame(columns=['Name','salary']) 
+df.loc[0]=['Prasad',25000] 
+df.loc[1]=['Shubham',18000] 
+df.loc[2]=['Chetan',27000] 
+df.loc[3]=['Yash',11000] 
+import numpy as np 
+import matplotlib.pyplot as plt 
+df.plot(x="Name",y="salary") 
+plt.show()
