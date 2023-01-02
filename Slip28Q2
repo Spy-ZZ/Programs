@@ -3,9 +3,56 @@
 # Q.2
 # Write a Python program 
 # 1) To create a dataframe containing columns name, age and percentage. Add 10 rows to the 
-# dataframe. View the dataframe. 
+# dataframe. View the dataframe.
 # 2) To print the shape, number of rows-columns, data types, feature names and the description of 
-# the data.
+# the data.9+
 # 3) To view basic statistical details of the data. 
 # 4) To Add 5 rows with duplicate values and missing values. Add a column ‘remarks’ with empty 
 # values. Display the data.[15]
+
+
+
+import pandas as pd
+df=pd.DataFrame(columns=['Name','Age','Percentage'])
+df.loc[0]=['Yash',18,80]
+df.loc[1]=['ABC',19,85]
+df.loc[2]=['Shubham',19,80]
+df.loc[3]=['XYZ',25,60]
+df.loc[4]=['Prasad',15,80]
+df.loc[5]=['PQR',12,40]
+df.loc[6]=['Chetan',9,80]
+df.loc[7]=['ABC',19,85]
+df.loc[8]=['Omkar',19,80]
+df.loc[9]=['PQR',12,40]
+print("Dataframe:\n")
+print(df)
+print("--------------------------------------------------------")
+print("Shape:\n",df.shape)
+print("--------------------------------------------------------")
+print("Describe:\n",df.describe())
+print("--------------------------------------------------------")
+print("Data Types:\n",df.dtypes)
+print("--------------------------------------------------------")
+print("INFO:\n",df.info())
+print("--------------------------------------------------------")
+df.loc[10]=['Yash',18,None]
+df.loc[11]=['ABC',None,85]
+df.loc[12]=['Omkar',19,80]
+df.loc[13]=[None,25,60]
+df.loc[14]=['ABC',None,40]
+df["Remark"]=None
+df.duplicated()
+print("Data:\n",df)
+print(df.shape)
+print(df.describe())
+print(df.dtypes)
+print(df.info())
+plt.plot(df["name"],df["age"],df["Per"],"r--")
+plt.show()
+
+
+
+
+
+
+
