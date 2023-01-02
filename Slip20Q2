@@ -1,0 +1,42 @@
+# # Slip 20
+
+# Q.2 A) Generate a random array of 50 integers and display them using a line chart, scatter plot, 
+# histogram and box plot. Apply appropriate color, labels and styling options. [10]
+
+# In[141]:
+
+
+import numpy as np 
+import matplotlib.pyplot as plt 
+x = np.random.randint(1,100,50) 
+y = np.random.randint(1,100,50)
+print("Line Chart:\n")
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.plot(x,y)
+plt.show()
+print("-----------------------------------------------------------------------")
+print("Scatter Plot:\n")
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.scatter(x,y,size,colors)
+plt.show()
+print("-----------------------------------------------------------------------")
+print("Histogram Plot:\n")
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.hist(x,facecolor='r',linewidth=2)
+plt.hist(y,facecolor='g',linewidth=2)
+plt.show()
+print("-----------------------------------------------------------------------")
+print("Box Plot:\n")
+fig = plt.figure(figsize =(10, 7)) 
+z=[x,y]
+plt.boxplot(z,vert=False)
+plt.show()
+
+
+# B) Add two outliers to the above data and display the box plot. [5]
+
+# In[ ]:
+
