@@ -4,12 +4,12 @@
 # [10]
 # 
 
-import pandas as pd
+mport pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-df=pd.read_csv(r"C:\Users\admin\Desktop\CSV\Iris.csv")
-sns.scatterplot(data=df,x='sepal_length',y='petal_length',hue='Species')
-df
+df=pd.read_csv("Downloads/iris.csv")
+sns.scatterplot(data=df,x='sepal.length',y='petal.length',hue='variety')
+plt.show()
 
 
 
@@ -18,7 +18,20 @@ df
 #  B) Write a Python program to create a data frame containing columns name, age , salary, 
 # department . Add 10 rows to the data frame. View the data frame. [5]
 
-# In[ ]:
+
+
+import pandas as pd
+df=pd.DataFrame(columns=['Name','Age','Salary','Department'])
+df.loc[0]=['Yash',44,72000,'IT']
+df.loc[1]=['ABC',27,48000,'CS']
+df.loc[2]=['Prasad',30,54000,'Maths']
+df.loc[3]=['PQR',38,61000,'']
+df.loc[4]=['Chetan',40,75000,'yes']
+df.loc[5]=['XYZ',35,58000,'yes']
+df.loc[6]=['Shubham',12,52000,'no']
+df.loc[7]=['LMN',48,79000,'yes']
+df.loc[8]=['Omkar',50,83000,'no']
+df.loc[9]=['DEF',37,67000,'yes']
 
 
 
