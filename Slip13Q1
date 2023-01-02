@@ -1,160 +1,5 @@
 Write a PHP script to create a chess board using CSS on table cells
 ///////////////////////////////////////////////////////////////////
-By html & CSS
-
-
-
-<html>
- <head> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <style id="compiled-css" type="text/css">
-#main {
-   width:100%;
-   height:auto;
-}
-
-.boardWrapper {
-   margin-left:auto;
-   margin-right:auto;
-   width:561px;
-   height:561px;
-}
-
-.board {
-   table-layout:fixed;
-   border:none;
-   border-collapse:collapse;
-   border-spacing:0px;
-   height:100%;
-   width:100%;
-}
-
-table.board tr td {
-   border:2px solid Chartreuse;
-}
-
-table.board tr:nth-of-type(odd) td:nth-of-type(odd),
-table.board tr:nth-of-type(even) td:nth-of-type(even) {
-   background-color:white;
-}
-
-table.board tr:nth-of-type(even) td:nth-of-type(odd),
-table.board tr:nth-of-type(odd) td:nth-of-type(even) {
-   background-color:black;
-}
-</style> 
- </head> 
- <body> 
-  <div id="main"> 
-   <div class="boardWrapper"> 
-    <table role="grid" class="board" id="chessBoard"> 
-     <tbody> 
-      <tr> 
-       <th id="rank_0">8</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_1">7</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_2">6</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_3">5</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_4">4</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_5">3</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_6">2</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th id="rank_7">1</th> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-       <td></td> 
-      </tr> 
-      <tr> 
-       <th></th> 
-       <th id="file_0">a</th> 
-       <th id="file_1">b</th> 
-       <th id="file_2">c</th> 
-       <th id="file_3">d</th> 
-       <th id="file_4">e</th> 
-       <th id="file_5">f</th> 
-       <th id="file_6">g</th> 
-       <th id="file_7">h</th> 
-      </tr> 
-     </tbody> 
-    </table> 
-   </div> 
-  </div>  
- </body>
-</html>
-///////////////////////////////////////////////////////////
 by php
 
 <html> 
@@ -206,3 +51,35 @@ for($i=1;$i<=8;$i++)
 echo"</table>" ; 
 ?> 
 </html> 
+//////////////////////////////////////////////////////////
+
+
+
+<html> 
+ 
+ <body> 
+ <h3>Chess Board using Nested For Loop</h3> 
+ <table width="270px" cellspacing="0px" cellpadding="0px" border="1px"> 
+ 
+ <?php 
+ for($row=1;$row<=8;$row++) 
+ { 
+ echo "<tr>"; 
+ for($col=1;$col<=8;$col++) 
+ { 
+ $total=$row+$col; 
+ if($total%2==0) 
+ { 
+ echo "<td height=30px width=30px bgcolor=white></td>"; 
+ } 
+ else 
+ { 
+ echo "<td height=30px width=30px bgcolor=black></td>"; 
+ } 
+ } 
+ echo "</tr>"; 
+ } 
+ ?> 
+ </table> 
+ </body> 
+ </html>
