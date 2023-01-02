@@ -4,7 +4,12 @@
 # [10]
 # 
 
-# In[ ]:
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=pd.read_csv(r"C:\Users\admin\Desktop\CSV\Iris.csv")
+sns.scatterplot(data=df,x='sepal_length',y='petal_length',hue='Species')
+df
 
 
 
