@@ -2,7 +2,30 @@
 # A) Write a Python program for Handling Missing Value. Replace missing value of salary, age 
 # column with mean of that column.(Use Data.csv file). [5]
 
-# In[ ]:
+import pandas as pd
+df=pd.DataFrame(columns=['Country','Age','Salary','Purchased'])
+df.loc[0]=['France',44,72000,'no']
+df.loc[1]=['Spain',27,48000,'yes']
+df.loc[2]=['Germany',30,54000,'no']
+df.loc[3]=['Spain',38,61000,'no']
+df.loc[4]=['Germany',40,None,'yes']
+df.loc[5]=['France',35,58000,'yes']
+df.loc[6]=['Spain',None,52000,'no']
+df.loc[7]=['France',48,79000,'yes']
+df.loc[8]=['Germanny',50,83000,'no']
+df.loc[9]=['France',37,67000,'yes']
+print("--------------------------------------------------")
+print(df)
+print("--------------------------------------------------")
+print("NULL value:\n")
+print(df.isnull().sum())
+df.fillna(0)
+print('--------------------------------------------------')
+df.dropna()
+df['Age']=df['Age'].fillna((df['Age'].mean()))
+df['Salary']=df['Salary'].fillna((df['Salary'].mean()))
+print("\n",df)
+
 
 
 
