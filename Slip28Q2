@@ -47,7 +47,7 @@ print(df.shape)
 print(df.describe())
 print(df.dtypes)
 print(df.info())
-plt.plot(df["name"],df["age"],df["Per"],"r--")
+plt.plot(df["Name"],df["Age"],df["Percentage"],"r--")
 plt.show()
 
 
