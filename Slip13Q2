@@ -1,0 +1,31 @@
+# # Slip 13
+
+# Q.2 A) Write a Python program to create a graph to find relationship between the petal length 
+# and petal width.(Use iris.csv dataset) [10]
+#  
+# 
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("Downloads/iris.csv")
+fig=df[df.variety=='Setosa'].plot(kind='scatter',x='petal.length',y='petal.width',color='b',label='Setosa')
+df[df.variety=='Versicolor'].plot(kind='scatter',x='petal.length',y='petal.width',color='y',label='Versicolor',ax=fig)
+df[df.variety=='Virginica'].plot(kind='scatter',x='petal.length',y='petal.width',color='r',label='Virginica',ax=fig)
+plt.show()
+
+
+# B) Write a Python program to find the maximum and minimum value of a given flattened 
+#  array. [5]
+
+
+
+import numpy as np
+a = np.arange(4).reshape((2,2))
+print("Original flattened array:")
+print(a)
+print("Maximum value of the above flattened array:")
+print(np.amax(a))
+print("Minimum value of the above flattened array:")
+print(np.amin(a))
