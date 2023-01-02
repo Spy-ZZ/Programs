@@ -1,0 +1,12 @@
+# # Slip 29
+
+# Q.2) Create a dataset data.csv having two categorical column (the country column, and the 
+# purchased column). 
+# 1. Apply OneHot coding on Country column. 
+# 2. Apply Label encoding on purchased column [15]
+
+# In[ ]:
+
+
+
+
