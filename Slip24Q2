@@ -20,7 +20,13 @@ plt.show()
 # B) Write a Python program to create a histogram of the three species of the Iris data. [5]
 
 # In[ ]:
-
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df=pd.read_csv(r"C:\Users\admin\Desktop\CSV\Iris.csv")
+plt.figure(figsize=(5,3))
+plt.hist(df["Species"],color="blue")
+df
 
 
 
