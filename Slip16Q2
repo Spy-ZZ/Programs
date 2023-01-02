@@ -1,0 +1,29 @@
+# # Slip 16
+
+# Q.2 A) Write a python program to create two lists, one representing subject names and the other 
+# representing marks obtained in those subjects. Display the data in a pie chart and bar chart. 
+# [10]
+# 
+
+# In[160]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+subjects=['Marathi','English','Maths','Sanskirt']
+marks=[90,91,50,93]
+print("Pie Chart:\n")
+plt.pie(marks,labels=subjects)
+plt.show()
+print("----------------------------------------")
+print("Bar Chart:\n")
+plt.bar(subjects,marks)
+plt.show()
+
+
+# B) Write a python program to create a data frame for students’ information such as name, 
+# graduation percentage and age. Display average age of students, average of graduation 
+# percentage. [5]
+
+# In[ ]:
+
