@@ -5,7 +5,14 @@
 # 
 
 # In[ ]:
-
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+df = pd.read_csv("Downloads/iris.csv")
+ax=plt.subplots(1,1,figsize=(10,8))
+sns.countplot('variety',data=df)
+plt.title("Iris Species Count")
+plt.show()
 
 
 
