@@ -38,5 +38,13 @@ plt.show()
 
 # B) Add two outliers to the above data and display the box plot. [5]
 
-# In[ ]:
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.random.randn(50)
+size=150*np.random.randn(50)
+colors=150*np.random.randn(50)
+m=np.array([1,2,3,4,5,6,7,8,100])
+plt.boxplot(x,vert=False)
+plt.show()
 
