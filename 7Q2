@@ -5,7 +5,31 @@
 # (Data.csv have two categorical column the country column, and the purchased column). 
 # [15]
 
-
+import pandas as pd
+import numpy as np
+import scipy.stats as s 
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
+df=pd.DataFrame(columns=['Country','Age','Salary','Purchased'])
+df.loc[0]=['France',44,72000,'no']
+df.loc[1]=['Spain',27,48000,'yes']
+df.loc[2]=['Germany',30,54000,'no']
+df.loc[3]=['Spain',38,61000,'no']
+df.loc[4]=['Germany',40,'-','yes']
+df.loc[5]=['France',35,58000,'yes']
+df.loc[6]=['Spain','-',52000,'no']
+df.loc[7]=['France',48,79000,'yes']
+df.loc[8]=['Germanny',50,83000,'no']
+df.loc[9]=['France',37,67000,'yes']
+print("OneHot Coding:\n")
+enc=OneHotEncoder(handle_unknown='ignore')
+enc_df=pd.DataFrame(enc.fit_transform(df[['Country']]).toarray())
+print(enc_df)
+print("------------------------------------------------")
+print("Label encoding:\n")
+labelencoder=LabelEncoder()
+df['Purchased']=labelencoder.fit_transform(df['Purchased'])
+print(df)
 
 
 
