@@ -1,0 +1,23 @@
+a.Write a Python program to create a Pie plot to get the frequency of the three species of 
+the Iris data (Use iris.csv)
+///////////////////////////////
+
+import matplotlib.pyplot as plt
+import pandas as pd
+iris = pd.read_csv("Downloads/iris.csv") ax-plt.subplots(1,1, figsize=(10,8))
+iris['variety'].value_counts().plot.pie(explode=[0.1,0.1,0.1], autopct='%1.1f%%', shadow=True plt.title("Iris Species %") plt.show()
+
+/////////////////////////////////////////////////////
+
+B) Write a Python program to view basic statistical details of the data.(Use wineequality-red.csv)
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+df=pd.read_csv("Downloads\winequality-red.csv")
+plt.plot(df["fixed acidity"],df["volatile acidity"],df["citric acid"],df["residual sugar"],
+         df["chlorides"],df["free sulfur dioxide"],df["total sulfur dioxide"],df["density"],
+         df["pH"],df["sulphates"],df["alcohol"],df["quality"],"r--")
+plt.show()
+
