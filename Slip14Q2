@@ -19,6 +19,11 @@ print(np.amin(a))
 #  B) Write a Python program to view basic statistical details of the data (Use advertising.csv)
 # [5]
 
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("Downloads/advertising.csv.txt")
+plt.plot(df["TV"],df["radio"],df["newspaper"],df["sales"],"r--")
+plt.show()
 
 
 
