@@ -1,41 +1,66 @@
- Write a program to accept ‘n’ name of cities from the user and sort them in 
-ascending order.
+Define a class patient (patient_name, patient_age, patient_oxy_level,patient_HRCT_report).
+Create an object of patient. Handle appropriate exception while patient oxygen level less than
+95% and HRCT scan report greater than 10, then throw user defined Exception “Patient is Covid
+Positive(+) and Need to Hospitalized” otherwise display its information.
+
 
 import java.util.Scanner;
+class PatientIsPositiveException extends Exception {
+    PatientIsPositiveException(String e) {
+        super(e);
+    }
+}
+class Test1 {
+    String name;
+    int age;
+    int oxylevel;
+    int HRCTreport;
+    Test1(String n, int a, int o, int HR) {
+        name = n;
+        age = a;
+        oxylevel = o;
+        HRCTreport = HR;
+    }
 
-public class City {
-    String a[];
-    int n;
-    Country() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter how many cities you want to put");
-        n = sc.nextInt();
-        a = new String[n];
-        for (int i = 0; i < n; i++) {
-            System.out.println("Enter cities:");
-            a[i] = sc.next();
-        }
-    }
-    void display(){
-        String temp="";
-        for (int i = 0; i <n ; i++) {
-            for (int j = i+1; j <n ; j++) {
-                if(a[i].compareTo(a[j])>0){
-                    temp=a[j-1];
-                    a[j-1]=a[j];
-                    a[j]=temp;
-                }
+    void verify() {
+
+        try {
+            if (oxylevel < 95 && HRCTreport > 10) {
+                throw new PatientIsPositiveException("Patient is Covid Positive(+) and Need to Hospitalized ");
             }
-        }
-        System.out.println("Cities in acending order");
-        for (int i = 0; i <n ; i++) {
-            System.out.println(a[i]);
+
+        } catch (PatientIsPositiveException e) {
+            System.out.println("Exception caught : " + e);
         }
     }
 }
-class TestCity{
+class Patient {
     public static void main(String[] args) {
-        City obj=new City();
-        obj.display();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter name");
+        String name = sc.next();
+        System.out.println("enter your age");
+        int age = sc.nextInt();
+        System.out.println("oxygen level");
+        int oxylevel = sc.nextInt();
+        System.out.println("HRCTreport ");
+        int HRCTreport = sc.nextInt();
+        Test1 obj = new Test1(name, age, oxylevel, HRCTreport);
+
+        if (oxylevel > 95 && HRCTreport < 10) {
+            System.out.println("______________________________________________________________");
+            System.out.println("Name:" + obj.name);
+            System.out.println("AGE:" + obj.age);
+            System.out.println("Oxylevel:" + obj.oxylevel);
+            System.out.println("HRCTreport:" + obj.HRCTreport);
+            System.out.println("______________________________________________________________");
+        }
+
+        sc.close();
+        obj.verify();
     }
 }
+
+
+
