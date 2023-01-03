@@ -1,0 +1,26 @@
+: Write a program to read the First Name and Last Name of a person, his weight and 
+height using command line arguments. Calculate the BMI Index which is defined as the 
+individual's body mass divided by the square of their height
+
+
+import java.util.*;
+public class BMI 
+{
+
+	   public static void main(String[] args) 
+  {
+		   Scanner sc =new Scanner(System.in);
+		   System.out.println("Enter  your name");
+                  String name=sc.next();
+                  System.out.println("Last Name");
+                  String Lname=sc.next();
+                  System.out.println("Enter your weight");
+                  float Weight=sc.nextFloat();
+                  System.out.println("Enter your height::");
+                  float Height=sc.nextFloat();
+                  
+                  float BMI=Weight/(Height*Height);
+                  System.out.println("Your body mass is:"+BMI+" kg/m2");
+	}
+
+}
