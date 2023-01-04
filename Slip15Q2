@@ -1,0 +1,7 @@
+ Write a program to define a class Account having members custname, accno. Define default 
+ and parameterized constructor. Create a subclass called SavingAccount with member savingbal, 
+ minbal. Create a derived class AccountDetail that extends the class SavingAccount with 
+ members, depositamt and withdrawalamt. Write a appropriate method to display customer 
+ details.
+
+
