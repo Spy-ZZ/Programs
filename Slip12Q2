@@ -1,0 +1,319 @@
+Write a java program that works as a simple calculator. Use a grid layout to 
+arrange buttons for the digits and for the +, -, *, % operations. Add a text field to display 
+the result. 
+
+
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class kalci {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JButton btnDot;
+	double first;
+	double second;
+	double res;
+	String operation;
+	String answer; 
+
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					kalci window = new kalci();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public kalci() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 351, 305);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.BOLD, 30));
+		textField.setBounds(10, 11, 315, 53);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNine = new JButton("9");
+		btnNine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnNine.getText();
+				textField.setText(number);
+			}
+		});
+		btnNine.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnNine.setBounds(10, 115, 71, 29);
+		frame.getContentPane().add(btnNine);
+		
+		JButton btnSix = new JButton("6");
+		btnSix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnSix.getText();
+				textField.setText(number);
+			}
+		});
+		btnSix.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnSix.setBounds(10, 155, 71, 29);
+		frame.getContentPane().add(btnSix);
+		
+		JButton btnThree = new JButton("3");
+		btnThree.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnThree.getText();
+				textField.setText(number);
+			}
+		});
+		btnThree.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnThree.setBounds(10, 195, 71, 29);
+		frame.getContentPane().add(btnThree);
+		
+		JButton btnEight = new JButton("8");
+		btnEight.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnEight.getText();
+				textField.setText(number);
+			}
+		});
+		btnEight.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnEight.setBounds(91, 115, 71, 29);
+		frame.getContentPane().add(btnEight);
+		
+		JButton btnFive = new JButton("5");
+		btnFive.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnFive.getText();
+				textField.setText(number);
+			}
+		});
+		btnFive.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnFive.setBounds(91, 155, 71, 29);
+		frame.getContentPane().add(btnFive);
+		
+		JButton btnTwo = new JButton("2");
+		btnTwo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnTwo.getText();
+				textField.setText(number);
+			}
+		});
+		btnTwo.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnTwo.setBounds(91, 195, 71, 29);
+		frame.getContentPane().add(btnTwo);
+		
+		JButton btnSeven = new JButton("7");
+		btnSeven.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnSeven.getText();
+				textField.setText(number);
+			}
+		});
+		btnSeven.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnSeven.setBounds(172, 115, 71, 29);
+		frame.getContentPane().add(btnSeven);
+		
+		JButton btnFour = new JButton("4");
+		btnFour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnFour.getText();
+				textField.setText(number);
+			}
+		});
+		btnFour.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnFour.setBounds(172, 155, 71, 29);
+		frame.getContentPane().add(btnFour);
+		
+		JButton btnOne = new JButton("1");
+		btnOne.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnOne.getText();
+				textField.setText(number);
+			}
+		});
+		btnOne.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnOne.setBounds(172, 195, 71, 29);
+		frame.getContentPane().add(btnOne);
+		
+		JButton btnZero = new JButton("0");
+		btnZero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnZero.getText();
+				textField.setText(number);
+			}
+		});
+		btnZero.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnZero.setBounds(91, 235, 71, 29);
+		frame.getContentPane().add(btnZero);
+		
+		JButton btnPlus = new JButton("+");
+		btnPlus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation="+";
+			}
+		});
+		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnPlus.setBounds(253, 75, 71, 29);
+		frame.getContentPane().add(btnPlus);
+		
+		JButton btnMinus = new JButton("-");
+		btnMinus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation="-";
+			}
+		});
+		btnMinus.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnMinus.setBounds(253, 115, 71, 29);
+		frame.getContentPane().add(btnMinus);
+		
+		JButton btnMultiply = new JButton("*");
+		btnMultiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation="*";
+			}
+		});
+		btnMultiply.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnMultiply.setBounds(254, 155, 71, 29);
+		frame.getContentPane().add(btnMultiply);
+		
+		JButton btnMod = new JButton("%");
+		btnMod.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation="%";
+			}
+		});
+		btnMod.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnMod.setBounds(254, 195, 71, 29);
+		frame.getContentPane().add(btnMod);
+		
+		btnDot = new JButton(".");
+		btnDot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btnDot.getText();
+				textField.setText(number);
+			}
+		});
+		btnDot.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnDot.setBounds(10, 235, 71, 29);
+		frame.getContentPane().add(btnDot);
+		
+		JButton btnEqual = new JButton("=");
+		btnEqual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String answer;
+				second=Double.parseDouble(textField.getText());
+				if(operation=="+")
+				{
+					res=first+second;
+					answer=String.format("%.2f", res);
+					textField.setText(answer);
+				}
+				else if(operation=="*")
+				{
+					res=first*second;
+					answer=String.format("%.2f", res);
+					textField.setText(answer);
+				}
+				else if(operation=="-")
+				{
+					res=first-second;
+					answer=String.format("%.2f", res);
+					textField.setText(answer);
+				}
+				else if(operation=="/")
+				{
+					res=first/second;
+					answer=String.format("%.2f", res);
+					textField.setText(answer);
+				}
+				else if(operation=="%")
+				{
+					res=first%second;
+					answer=String.format("%.2f", res);
+					textField.setText(answer);
+				}
+			}
+		});
+		btnEqual.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnEqual.setBounds(172, 235, 71, 29);
+		frame.getContentPane().add(btnEqual);
+		
+		JButton btnDivide = new JButton("/");
+		btnDivide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operation="/";
+			}
+		});
+		btnDivide.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnDivide.setBounds(254, 235, 71, 29);
+		frame.getContentPane().add(btnDivide);
+		
+		JButton btnBackSpace = new JButton("B");
+		btnBackSpace.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String BackSpace=null;
+				if(textField.getText().length()>0)
+				{
+					StringBuilder str= new StringBuilder(textField.getText());
+					str.deleteCharAt(textField.getText().length()-1);
+					BackSpace=str.toString();
+					textField.setText(BackSpace);
+				}
+			}
+		});
+		
+		btnBackSpace.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnBackSpace.setBounds(10, 75, 71, 29);
+		frame.getContentPane().add(btnBackSpace);
+		
+		JButton btnClear = new JButton("C");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+			}
+		});
+		btnClear.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btnClear.setBounds(91, 75, 71, 29);
+		frame.getContentPane().add(btnClear);
+		
+		JButton btn00 = new JButton("00");
+		btn00.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number=textField.getText()+btn00.getText();
+				textField.setText(number);
+			}
+		});
+		btn00.setFont(new Font("Tahoma", Font.BOLD, 16));
+		btn00.setBounds(173, 75, 71, 29);
+		frame.getContentPane().add(btn00);
+	}
+}
