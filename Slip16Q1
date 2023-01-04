@@ -1,0 +1,14 @@
+ Write a program to find the Square of given number using function interface. 
+ 
+ interface Square {
+    int calculate(int x);
+}
+class square {
+    public static void main(String args[])
+    {
+        int a = 5;
+        Square s = (int x) -> x * x;
+        int ans = s.calculate(a);
+        System.out.println(ans);
+    }
+} 
