@@ -1,0 +1,52 @@
+Write a Program to illustrate multilevel Inheritance such that country is 
+inherited from continent. State is inherited from country. Display the place, state, 
+country and continent.
+
+
+
+import java.util.Scanner;
+
+public class Continent {
+    String continent;
+    Scanner sc =new Scanner(System.in);
+     public void continent(){
+         System.out.println("Enter your Continet :");
+         continent=sc.next();
+     }
+}
+class Country extends Continent
+{
+    String country;
+    public void country(){
+        System.out.println("Enter your Country: ");
+        country=sc.next();
+    }
+}
+class State extends Country
+{
+    String state;
+     void state(){
+        System.out.println("Enter your State:");
+        state=sc.next();
+    }
+}
+class Place extends State{
+    String place;
+    void main(){
+        System.out.println("Enter your Place :");
+        place=sc.next();
+    }
+
+    public static void main(String[] args) {
+        Place p=new Place();
+        p.continent();
+        p.country();
+        p.state();
+        p.main();
+        System.out.println("-------------------------------------");
+        System.out.println("Continent= "+p.continent);
+        System.out.println("Country= "+p.country);
+        System.out.println("State= "+p.state);
+        System.out.println("Place= "+p.place);
+    }
+}
