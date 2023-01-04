@@ -1,0 +1,68 @@
+Create an employee class(id,name,deptname,salary). Define a default and 
+parameterized constructor. Use ‘this’ keyword to initialize instance variables. Keep a 
+count of objects created. Create objects using parameterized constructor and display the 
+object count after each object is created. (Use static member and method). Also display 
+the contents of each object. 
+
+
+
+public class SetAQ1 {
+    int emp_Id,salary;
+    String Dpt_Name,emp_name;
+    public int getEmpId(){
+        return emp_Id;
+    }
+    public void setEmpId(int emp_Id) {
+        this.emp_Id = emp_Id;
+    }
+    public String getName(){
+        return emp_name;
+    }
+
+    public void setEmp_name(String emp_name) {
+        this.emp_name = emp_name;
+    }
+
+    public int getSalary(){
+        return salary;
+    }
+    public void setSalary(int salary){
+        this.salary=salary;
+    }
+    public String getDptName(){
+        return Dpt_Name;
+    }
+    public void setDptName(String Dpt_Name){
+        this.Dpt_Name=Dpt_Name;
+    }
+
+}
+class Employee_details{
+    public static void main(String[] args) {
+        SetAQ1 obj1=new SetAQ1();
+
+
+        obj1.setEmpId(101);
+        obj1.setEmp_name("hhhhh ");
+        obj1.setDptName(" rrrrrrrrrr");
+        obj1.setSalary(1222);
+
+        System.out.println("Employee Name: "+obj1.getName());
+
+        System.out.println("Employee id : "+obj1.getEmpId());
+        System.out.println("Employee Salary : "+obj1.getSalary() );
+        System.out.println("Employee Department: "+obj1.getDptName());
+        System.out.println("-----------------------------------------------------------------------");
+        obj1.setEmpId(102);
+        obj1.setEmp_name("Ash");
+        obj1.setDptName(" kk");
+        obj1.setSalary(100);
+        System.out.println("Employee Name: "+obj1.getName());
+        System.out.println("Employee id : "+obj1.getEmpId());
+        System.out.println("Employee Salary : "+obj1.getSalary() );
+        System.out.println("Employee Department: "+obj1.getDptName());
+
+    }
+}
+
+
