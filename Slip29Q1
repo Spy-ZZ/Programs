@@ -1,0 +1,6 @@
+: Write a program to create a class 
+Customer(custno,custname,contactnumber,custaddr). Write a method to search the 
+customer name with given contact number and display the details
+
+
+
