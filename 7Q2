@@ -1,0 +1,24 @@
+ Write a program to accept a text file from user and display the contents of a file in 
+ reverse order and change its case.
+
+
+import java.io.*;
+import java.util.*;
+class Sample
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileReader f = new FileReader("fname");
+        Scanner sc = new Scanner(f);
+        String str1,str2;
+        while(sc.hasNext())
+        {
+            StringBuilder CH1 = new StringBuilder();
+            str1 = sc.next();
+            str2=str1.toUpperCase();
+            CH1.append(str2);
+            CH1.reverse();
+            System.out.println(CH1);
+        }
+    }
+}
