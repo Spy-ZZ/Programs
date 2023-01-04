@@ -1,0 +1,25 @@
+Accept the names of two files and copy the contents of the first to the second. First file 
+having Book name and Author name in file
+
+
+import java.io.*;
+import java.util.*;
+class Copy{
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("source file name :\n");
+        String file1 = sc.next();
+        System.out.print("destination file name :\n");
+        String file2 = sc.next();
+        FileReader fin = new FileReader("fname");
+        FileWriter fout = new FileWriter("fname", true);
+        int c;
+        while ((c = fin.read()) != -1) {
+            fout.write(c);
+        }
+        System.out.println("Copy finish...");
+
+        fin.close();
+        fout.close();
+    }
+}
