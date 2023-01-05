@@ -11,7 +11,7 @@ abstract class Bank
 }
 class BankA extends Bank
 {
-    int bal=1000;
+    int bal=100;
     public void getBalance()
     {
         System.out.println("Balance of BankA is "+bal);
@@ -19,7 +19,7 @@ class BankA extends Bank
 }
 class BankB extends Bank
 {
-    int bal=2000;
+    int bal=150;
     public void getBalance()
     {
         System.out.println("Balance of BankB is "+bal);
@@ -34,7 +34,7 @@ class BankC extends Bank
     }
     public static void main(String args[])
     {
-
+        
         BankA a=new BankA();
         BankB b=new BankB();
         BankC c=new BankC();
@@ -42,4 +42,4 @@ class BankC extends Bank
         b.getBalance();
         c.getBalance();
     }
-} 
+}
