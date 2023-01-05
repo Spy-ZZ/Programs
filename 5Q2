@@ -4,3 +4,50 @@ Write a menu driven program to perform the following operations on multidimensio
  Multiplication
  Exit
 
+
+
+import java.util.Scanner;
+
+public class MenuDriven {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int a[][]={{6,7,8},{9,10,11},{3,5,7}};
+        int b[][]={{4,7,10},{5,8,11},{6,9,1}};
+        int c[][]=  new int [3] [3];
+
+        System.out.println("Choose any One");
+        System.out.println("----------------------------");
+        System.out.println("1.Addition");
+        System.out.println("2.Multiplication");
+        System.out.println("3.Exit");
+        int choice;
+         choice =sc.nextInt();
+         switch (choice){
+             case 1:
+                 for(int i=0;i<3;i++){
+                     for (int j = 0; j <3 ; j++) {
+                         c[i][j]=a[i][j]+b[i][j];
+                         System.out.print(""+c[i][j]);
+
+                     }
+                     System.out.println("");
+                 }
+             case 2:
+                 for(int i=0;i<3;i++){
+                     for (int j = 0; j <3 ; j++) {
+
+                         for (int k = 0; k <3 ; k++) {
+                             c[i][j]+=a[i][k]*b[k][j];
+                         }
+
+                         System.out.print(""+c[i][j]);
+                     }
+                     System.out.println("");
+
+                 }
+        }
+    }
+}
+
+
+
