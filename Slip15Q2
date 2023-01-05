@@ -5,3 +5,29 @@
  details.
 
 
+class Account{
+    int accno=1234;
+    String custname="Chutiya";
+}
+class SavingAccount extends Account{
+    int SavingBal=55000;
+    int Minbal=4123;
+}
+class AccountDeail extends SavingAccount{
+    int Depositamt=2000;
+    int WithdrawAmt=1000;
+    public static void main(String[] args) {
+        Account A=new Account();
+        SavingAccount SA=new SavingAccount();
+        AccountDeail AD=new AccountDeail();
+        System.out.println("----------------------------------------------------");
+        System.out.println("cutomer name:"+A.custname);
+        System.out.println("acc no:"+A.accno);
+        System.out.println("Saving balance:"+SA.SavingBal);
+        System.out.println("Minbal:"+SA.Minbal);
+        System.out.println("DepositAmt:"+AD.Depositamt);
+        System.out.println("Withdraw amt:"+AD.WithdrawAmt);
+        System.out.println("----------------------------------------------------");
+    }
+}
+
