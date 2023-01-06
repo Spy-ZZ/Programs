@@ -3,7 +3,7 @@ Personname,Aadharno, Panno. Accept information for 5 objects and display appropr
 information (use this keyword)
 
 
-mport java.io.*;
+import java.io.*;
 class Person
  {
 	int Aadharno;
